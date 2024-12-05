@@ -79,7 +79,7 @@ cd netflix
 ```
 ```bash
 # Build the Docker image
-docker build --build-arg API_KEY="ENTER YOUR API-KEY" -t netflix .
+docker build --build-arg API_KEY="YOUR_TMDB_API_KEY" -t netflix .
 
 # Run the Docker container
 docker run -p 3000:3000 netflix-clone
