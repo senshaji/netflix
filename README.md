@@ -43,49 +43,48 @@ A **Netflix** clone application built using **Next.js**, designed to replicate t
 - **ESLint & Prettier** – Code linting and formatting tools.
 - **Docker** – Containerization platform for consistent development and deployment environments.
 
-## 🐳 Docker Setup
+🐳 For Docker Permissions
+If you want to run Docker as a non-root user, then you need to add your user to the docker group.
 
-To build and run the project inside a Docker container:
+Create the docker group if it does not exist:
 
 ```bash
-# Build the Docker image
-docker build -t netflix-clone .
-
-# Run the Docker container
-docker run -p 3000:3000 netflix-clone
+$ sudo groupadd docker
 ```
+Add your user to the docker group:
+```bash
+$ sudo usermod -aG docker $USER
+```
+Create a TMDB Account:
+Go to The Movie Database (TMDB) and create an account if you don’t have one.
+https://www.themoviedb.org/
+
+Request API Key:
+
+After logging in, go to your Account Settings by clicking on your profile icon.
+Select API from the left menu.
+Click Create under the API key section.
+Fill out the form (application purpose) and submit your request.
+Once approved, your API Key will be displayed. Copy it.
+Build Docker Image with API Key:
+Use the following command to build the Docker image and pass the API key as a build argument:
 
 ## 📦 Installation and Running Locally
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/senshaji/netflix.git
-   cd netflix
-   ```
+```bash
+git clone https://github.com/senshaji/netflix.git
+cd netflix
+```
+```bash
+# Build the Docker image
+docker build --build-arg API_KEY="ENTER YOUR API-KEY" -t netflix .
 
-2. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-3. Run the development server:
-
-   ```bash
-   yarn dev
-   ```
-
+# Run the Docker container
+docker run -p 3000:3000 netflix-clone
+```
+Replace YOUR_TMDB_API_KEY with the actual API key you received from TMDB.
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-## ✅ Linting and Formatting
-
-To lint and format the code:
-
-```bash
-# Lint the code
-yarn lint
-
-# Format the code
-yarn format
-```
+Credits : Ayushi Gupta
