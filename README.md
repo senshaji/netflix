@@ -1,6 +1,6 @@
 # Netflix Clone 🎬
 
-A **Netflix** clone application built using **Next.js**, designed to replicate the UI and some core features of Netflix. This project is containerized using Docker and follows best practices with linting and code formatting.
+A **Netflix** clone application built using **Next.js**, designed to replicate the UI. This project is containerized using Docker and follows best practices with linting and code formatting.
 
 ## 📂 Project Structure
 
